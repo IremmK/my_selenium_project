@@ -29,5 +29,6 @@ public class Day02_VerifyTitleTest {
             System.out.println("ACTUAL TITLE : "+title);
         }
         driver.quit();
+
     }
 }
