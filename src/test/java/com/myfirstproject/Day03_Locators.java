@@ -66,9 +66,9 @@ Then verify the login is successful
         //Asserting the logout is successful
         //strategy : if the current url contains auth then it means user is back on the login page
         Assert.assertTrue(driver.getCurrentUrl().contains("auth"));
-        //strategy : if login h5 element is displayed then it means user is back on the login page
-        //.isDisplayed() returns TRUE if elements is displayed
-        //
+        //strategy : if Login h5 element is displayed then it means user is back on the login page
+        //.isDisplayed() returns TRUE if element is DISPLAYED
+        //returns FALSE if the element is not displayed
         Assert.assertTrue(driver.findElement(By.xpath("//h5[@class='oxd-text oxd-text--h5 orangehrm-login-title']")).isDisplayed());
 
         //My Way
