@@ -5,6 +5,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 
 public class Q05_MedunnaSignIn extends TestBase {
     @Test
@@ -29,6 +30,9 @@ public class Q05_MedunnaSignIn extends TestBase {
         driver.findElement(By.xpath("//button[@type='submit']")).click();
 
         //Assert that you signed in
+        WebElement name = driver.findElement(By.xpath("//span[.='Mark Twain']"));
+        Assert.assertTrue(name.getText().contains("Mark Twain"));
+        System.out.println(name.getText());
         //Homework...
 
     }
