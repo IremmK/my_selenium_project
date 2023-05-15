@@ -43,7 +43,7 @@ public class Q06_DeleteAndDragBack extends TestBase {
         recycleButtons.forEach(WebElement::click);
 
         // Delete images by drag and drop
-        List <WebElement> images = driver.findElements(By.xpath("//ul[@id='gallery']/li"));
+        List<WebElement> images = driver.findElements(By.xpath("//ul[@id='gallery']/li"));
 
         WebElement trash = driver.findElement(By.id("trash"));
         Actions actions = new Actions(driver);

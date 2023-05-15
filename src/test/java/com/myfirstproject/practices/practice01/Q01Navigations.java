@@ -1,4 +1,4 @@
-package com.myfirstproject.practices.practice01.practice01;
+package com.myfirstproject.practices.practice01;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

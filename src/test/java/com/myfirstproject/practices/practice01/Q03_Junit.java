@@ -1,4 +1,4 @@
-package com.myfirstproject.practices.practice01.practice01;
+package com.myfirstproject.practices.practice01;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;

@@ -1,4 +1,4 @@
-package com.myfirstproject.practices.practice01.practice01;
+package com.myfirstproject.practices.practice01;
 
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
