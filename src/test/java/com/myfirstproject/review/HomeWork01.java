@@ -30,6 +30,9 @@ package com.myfirstproject.review;
 import com.myfirstproject.utilities.TestBase;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 public class HomeWork01 extends TestBase {
     /*
@@ -42,7 +45,12 @@ public class HomeWork01 extends TestBase {
     @Test
     public void ebayTest (){
         driver.get("https://www.ebay.com/");
-        driver.findElement(By.linkText("//a[@_sp='p2481888.m1379.l3250']")).click();
+        driver.findElement(By.xpath("//*[@id=\"mainContent\"]/div[1]/ul/li[8]/div[2]/a[1]")).click();
+        List<WebElement> imgs = driver.findElements(By.xpath("//img[@width='225']"));
+        for(WebElement eachData : imgs){
+            System.out.print(eachData.getText());
+        }
+
 
 
     }

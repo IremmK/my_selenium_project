@@ -9,10 +9,7 @@ import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import java.io.File;
 import java.io.IOException;
@@ -116,6 +113,60 @@ public abstract class TestBase {
         //GETTING THE ABSOLUTE PATH OF THE IMAGE PATH THAT IS STRING
         return new File(path).getAbsolutePath() ;
     }
+    /*
+    JAVASCRIPT EXECUTOR METHODS
+    @param WebElement
+    scrolls into on that element
+     */
+    public static void scrollIntoViewJS (WebElement element){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);",element);
+    }
+    /*
+    scroll all the way down
+     */
+    public static void scrollAllTheWayDownJS (){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
 
+    }
+
+    /*
+    scroll all the way up
+     */
+    public static void scrollAllTheWayUpJS (){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollTo(0,-document.body.scrollHeight)");
+
+    }
+
+    /*
+    @param WebElement
+    clicks on that element
+     */
+   public static void clicksByJS (WebElement element){
+       JavascriptExecutor js = (JavascriptExecutor) driver;
+       js.executeScript("arguments[0].click();",element);
+
+
+   }
+   /*
+   @param String id of the WebElement that we want to locate
+   locating element using javascript executor
+   abd returns that WebElement
+   NOTE: that is not common, and we should use 8 locators that we learned in selenium
+    */
+    public WebElement locateElementsByJS (String idOfElement){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        return (WebElement) js.executeScript("return document.getElementById('"+idOfElement+"')");
+    }
+    /*
+    @param1 WebElement, @param2 String
+    type the string in that web element
+     */
+    public static void setValueByJS(WebElement inputElement,String text){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].setAttribute('value','"+text+"')",inputElement);
+    }
 
 }

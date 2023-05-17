@@ -4,30 +4,14 @@ import com.myfirstproject.utilities.TestBase;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.devtools.v85.animation.model.KeyframeStyle;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Q01 extends TestBase {
-//    1. Launch browser
-//2. Navigate to url 'http://automationexercise.com'
-//            3. Verify that home page is visible successfully
-//4. Click on 'Signup / Login' button
-//5. Verify 'New User Signup!' is visible
-//6. Enter name and email address
-//7. Click 'Signup' button
-//8. Verify that 'ENTER ACCOUNT INFORMATION' is visible
-//9. Fill details: Title, Name, Email, Password, Date of birth
-//10. Select checkbox 'Sign up for our newsletter!'
-//            11. Select checkbox 'Receive special offers from our partners!'
-//            12. Fill details: First name, Last name, Company, Address, Address2, Country, State, City, Zipcode, Mobile Number
-//13. Click 'Create Account button'
-//            14. Verify that 'ACCOUNT CREATED!' is visible
-//15. Click 'Continue' button
-//16. Verify that 'Logged in as username' is visible
-//17. Click 'Delete Account' button
-//18. Verify that 'ACCOUNT DELETED!' is visible and click 'Continue' button
     @Test
     public void automationExerciseTest () throws InterruptedException {
         //2. Navigate to url 'http://automationexercise.com'
@@ -43,7 +27,7 @@ public class Q01 extends TestBase {
 
         //6. Enter name and email address
         driver.findElement(By.xpath("//input[@name='name']")).sendKeys("Irem");
-        driver.findElement(By.xpath("//input[@data-qa='signup-email']")).sendKeys("iremkaya55@gmail.com");
+        driver.findElement(By.xpath("//input[@data-qa='signup-email']")).sendKeys("iremkaya555@gmail.com");
         Thread.sleep(5000);
         //7. Click 'Signup' button
         driver.findElement(By.xpath("//button[@data-qa='signup-button'] ")).click();
@@ -81,7 +65,7 @@ public class Q01 extends TestBase {
         driver.findElement(By.id("mobile_number")).sendKeys("5438403870");
 
         //13. Click 'Create Account button'
-        driver.findElement(By.xpath("//button[@data-qa='create-account']")).click();
+        driver.findElement(By.xpath("//button[@data-qa='create-account']")).sendKeys(Keys.ENTER);
         //14. Verify that 'ACCOUNT CREATED!' is visible
         String ac = driver.findElement(By.xpath("//b[.='Account Created!']")).getText();
         Assert.assertTrue(ac.contains("ACCOUNT CREATED!"));

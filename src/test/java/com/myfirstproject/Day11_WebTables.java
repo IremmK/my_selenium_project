@@ -70,4 +70,23 @@ public class Day11_WebTables extends TestBase {
     //Parameter 1 = row number
     //Parameter 2 = column number
     //printData(2,3);  => prints data in 2nd row 3rd column
+    static String data;
+    public static String printData (int row , int column){
+        driver.get("https://the-internet.herokuapp.com/tables");
+        List<WebElement> allColumns = driver.findElements(By.xpath("//table[@id='table1']//tr//td"));
+        List<WebElement> allRows = driver.findElements(By.xpath("//table[@id='table1']//tr"));
+
+        if(allRows.get(row).getText().equals(allColumns.get(column).getText())){
+            data =allRows.get(row).getText() ;
+        }
+        return data;
+
+
+
+
+    }
+
+    public static void main(String[] args) {
+        System.out.println(printData(2, 3));
+    }
 }
